@@ -1,0 +1,122 @@
+:root {
+  --bg: #0b0d10; --panel: #12161b; --text: #e6edf3; --muted: #9fb0c0; --brand: #3ecf8e; --accent: #7aa2f7; --card: #141a21; --ring: rgba(62,207,142,.5)
+}
+[data-theme="light"] {
+  --bg: #f7f9fc; --panel: #ffffff; --text: #0e141b; --muted: #516172; --brand: #0fb981; --accent: #3558e6; --card: #ffffff; --ring: rgba(15,185,129,.25)
+}
+* { box-sizing: border-box }
+html, body { margin: 0; height: 100% }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #0b0d1000 60%), radial-gradient(1200px 600px at 90% -10%, rgba(122,162,247,.20), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(62,207,142,.20), transparent 60%), var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none }
+a:hover { text-decoration: underline }
+.container { max-width: 1000px; margin: 0 auto; padding: 24px }
+header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, var(--bg) 80%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--muted) 15%, transparent);
+}
+nav { display: flex; align-items: center; gap: 16px; justify-content: space-between }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .3px }
+.logo {
+  width: 36px; height: 36px; border-radius: 10px; background:
+  conic-gradient(from 200deg at 50% 50%, var(--brand), var(--accent) 55%, var(--brand));
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--panel) 60%, transparent), 0 10px 30px rgba(0,0,0,.25);
+}
+.nav-links a { margin: 0 10px; font-weight: 600; color: var(--text) }
+.nav-links a:hover { color: var(--accent) }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brand); color: #05120d; font-weight: 700; border: 0;
+  padding: 10px 14px; border-radius: 10px; cursor: pointer;
+  box-shadow: 0 8px 20px rgba(62,207,142,.25);
+  transition: transform .06s ease;
+}
+.btn:active { transform: translateY(1px) }
+.ghost { background: transparent; color: var(--text); border: 1px solid color-mix(in oklab, var(--muted) 25%, transparent) }
+.theme-toggle { border-radius: 10px; padding: 8px 10px }
+main { padding: 24px }
+.hero {
+  display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px;
+  align-items: center; margin-top: 24px
+}
+.card {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--muted) 18%, transparent);
+  border-radius: 16px; padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+h1 { font-size: clamp(26px,3.5vw,38px); line-height: 1.1; margin: 6px 0 10px }
+.muted { color: var(--muted) }
+.badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px }
+.badge {
+  padding: 6px 10px; border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: var(--text); border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  font-size: 12px; font-weight: 700; letter-spacing: .2px
+}
+.panel-title { font-weight: 800; margin: 0 0 6px }
+.grid { display: grid; gap: 16px }
+.grid.cols-3 { grid-template-columns: repeat(3,1fr) }
+.grid.cols-2 { grid-template-columns: repeat(2,1fr) }
+.project {
+  display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 14px;
+  border: 1px dashed color-mix(in oklab, var(--muted) 25%, transparent);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 86%, transparent), transparent);
+  transition: transform .1s ease, border-color .2s ease, background .2s ease;
+  cursor: default
+}
+.project:hover { transform: translateY(-2px); border-color: var(--accent) }
+.project h3 { margin: 4px 0 2px; font-size: 18px }
+.tags { display: flex; flex-wrap: wrap; gap: 8px }
+.tag {
+  font-size: 11px; padding: 4px 8px; border-radius: 999px; background: color-mix(in oklab, var(--brand) 12%, transparent); border: 1px solid color-mix(in oklab, var(--brand) 40%, transparent); color: var(--text); font-weight: 700
+}
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px }
+.filter-btn {
+  padding: 6px 10px; border-radius: 999px; background: transparent; color: var(--text);
+  border: 1px solid color-mix(in oklab, var(--muted) 30%, transparent);
+  cursor: pointer; font-weight: 700
+}
+.filter-btn.active { background: var(--accent); color: white; border-color: var(--accent) }
+form { display: grid; gap: 10px }
+input, textarea {
+  width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid color-mix(in oklab, var(--muted) 25%, transparent);
+  background: var(--panel); color: var(--text); outline: 2px solid transparent; transition: outline-color .2s ease, border-color .2s ease
+}
+input:focus, textarea:focus { outline-color: var(--ring); border-color: var(--brand) }
+.hint { font-size: 12px; color: var(--muted) }
+.footer { margin: 30px 0 10px; color: var(--muted); text-align: center }
+
+/* UPDATED AVATAR CSS TO HOLD YOUR PICTURE */
+.avatar {
+  width: 100%; aspect-ratio: 1.1/1; border-radius: 14px;
+  background: var(--panel);
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; 
+  padding: 0;
+}
+.profile-pic {
+  width: 100%; height: 100%;
+  object-fit: cover; /* Ensures your picture fills the box without stretching */
+  object-position: center top; /* Centers the photo */
+  display: block;
+}
+
+.section-title { margin: 0 0 8px; font-size: 20px }
+.row { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px }
+.kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; background: color-mix(in oklab, var(--panel) 70%, transparent); padding: 2px 6px; border-radius: 6px; border: 1px solid color-mix(in oklab, var(--muted) 25%, transparent) }
+
+@media (max-width: 920px) {
+  .hero { grid-template-columns: 1fr }
+  .row { grid-template-columns: 1fr }
+  .grid.cols-3 { grid-template-columns: 1fr 1fr }
+}
+@media (max-width: 600px) {
+  .grid.cols-3 { grid-template-columns: 1fr }
+  nav .nav-links { display: none }
+}
