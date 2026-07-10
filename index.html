@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONORE AKORTIA Portfolio</title>
+  <meta name="description" content="ONORE_AKORTIA — projects, skills, and contact." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body data-theme="dark">
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <img src="logo.jpeg" alt="O.K Group logo" width="50px" height="50px"/>
+          
+          </div>
+          <span>ONORE_AKORTIA</span>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button id="themeToggle" class="btn theme-toggle ghost" aria-pressed="false" aria-label="Toggle theme">Toggle theme</button>
+          <a class="btn" href="#contact">Hire me</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <p class="kbd" aria-hidden="true">console.log("Hello, world!")</p>
+        <h1>Building clean, interactive web experiences.</h1>
+        <p class="muted">I design and ship fast, accessible sites with modern JavaScript, semantic HTML, and resilient CSS. Below are a few projects and a quick way to reach me.</p>
+        <div class="badges" role="list">
+          <span class="badge" role="listitem">HTML · CSS · JS</span>
+          <span class="badge" role="listitem">DOM & Events</span>
+          <span class="badge" role="listitem">Accessible UI</span>
+          <span class="badge" role="listitem">Animations</span>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      
+      <!-- MY PICTURE -->
+      <div class="avatar card">
+        <img src="ONORE_AKORTIA_1.jpg" alt="Portrait of Onore Akortia" class="profile-pic" />
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:20px" class="row">
+      <div class="card">
+        <h2 class="section-title">About</h2>
+        <p>I focus on interactive front-end development: DOM manipulation, event handling, and small-but-delightful details that make sites feel alive while staying fast.</p>
+        <ul>
+          <li><strong>Performance:</strong> minimal dependencies, progressive enhancement.</li>
+          <li><strong>Accessibility:</strong> keyboard support, ARIA where useful, color contrast.</li>
+          <li><strong>Maintainability:</strong> clear structure, small components, comments.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Quick facts</h2>
+        <p class="muted">This site runs with zero build tools. It’s a single HTML file you can drop onto any static host.</p>
+        <div class="badges">
+          <span class="badge">No frameworks</span>
+          <span class="badge"><span aria-hidden="true">⚡</span> Fast load</span>
+          <span class="badge">Responsive</span>
+          <span class="badge">Theme toggle</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:20px">
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <h2 class="section-title">Projects</h2>
+          <div class="filters" role="tablist" aria-label="Project filters">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-btn" data-filter="ui" role="tab" aria-selected="false">UI</button>
+            <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">Data</button>
+            <button class="filter-btn" data-filter="tooling" role="tab" aria-selected="false">Tooling</button>
+          </div>
+        </div>
+        <div class="grid cols-3" id="projectGrid" aria-live="polite">
+          <article class="project" data-tags="ui">
+            <h3>Chore Door Remix</h3>
+            <p class="muted">A simple game demonstrating DOM events and state.</p>
+            <div class="tags"><span class="tag">Events</span><span class="tag">DOM</span></div>
+            <a href="#" aria-label="Open Chore Door project">Preview</a>
+          </article>
+          <article class="project" data-tags="data">
+            <h3>Live Search</h3>
+            <p class="muted">Client-side search with debounced input and highlighting.</p>
+            <div class="tags"><span class="tag">Search</span><span class="tag">Accessibility</span></div>
+            <a href="#" aria-label="Open Live Search project">Preview</a>
+          </article>
+          <article class="project" data-tags="tooling">
+            <h3>Color Contrast Checker</h3>
+            <p class="muted">Checks WCAG contrast for design tokens in real time.</p>
+            <div class="tags"><span class="tag">A11y</span><span class="tag">WCAG</span></div>
+            <a href="#" aria-label="Open Contrast Checker project">Preview</a>
+          </article>
+          <article class="project" data-tags="ui data">
+            <h3>Sortable Table</h3>
+            <p class="muted">ARIA-friendly sorting with keyboard support.</p>
+            <div class="tags"><span class="tag">Keyboard</span><span class="tag">ARIA</span></div>
+            <a href="#" aria-label="Open Sortable Table project">Preview</a>
+          </article>
+          <article class="project" data-tags="tooling">
+            <h3>Open Graph Tester</h3>
+            <p class="muted">Validates meta tags and previews social cards.</p>
+            <div class="tags"><span class="tag">Meta</span><span class="tag">Cards</span></div>
+            <a href="#" aria-label="Open Open Graph Tester project">Preview</a>
+          </article>
+          <article class="project" data-tags="ui">
+            <h3>Modal & Focus Trap</h3>
+            <p class="muted">Accessible modal with focus trapping and ESC close.</p>
+            <div class="tags"><span class="tag">Focus</span><span class="tag">ESC</span></div>
+            <a href="#" aria-label="Open Modal project">Preview</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <div class="card">
+        <h2 class="section-title">Contact</h2>
+        <p class="muted">This form validates on the client. Replace the submission handler to integrate with your backend or a form service.</p>
+        <form id="contactForm" novalidate>
+          <div>
+            <label for="name"><strong>Name</strong></label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+            <div class="hint" id="nameHint"></div>
+          </div>
+          <div>
+            <label for="email"><strong>Email</strong></label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <div class="hint" id="emailHint"></div>
+          </div>
+          <div>
+            <label for="message"><strong>Message</strong></label>
+            <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+            <div class="hint" id="messageHint"></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="btn" type="submit">Send message</button>
+            <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <p class="footer">© <span id="year"></span> ONORE_AKORTIA. Built with HTML, CSS, and vanilla JS.</p>
+  </main>
+
+  <!-- Link to your JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
