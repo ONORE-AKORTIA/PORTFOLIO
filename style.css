@@ -107,6 +107,12 @@ input:focus, textarea:focus { outline-color: var(--ring); border-color: var(--br
   display: block;
 }
 
+.logo-pic {
+  width: 80%; height: 100%;
+  object-fit: cover; /* Ensures your picture fills the box without stretching */
+  object-position: center top; /* Centers the photo */
+  display: block;
+}
 .section-title { margin: 0 0 8px; font-size: 20px }
 .row { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px }
 .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; background: color-mix(in oklab, var(--panel) 70%, transparent); padding: 2px 6px; border-radius: 6px; border: 1px solid color-mix(in oklab, var(--muted) 25%, transparent) }
